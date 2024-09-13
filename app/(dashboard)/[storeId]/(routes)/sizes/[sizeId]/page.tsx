@@ -12,11 +12,7 @@ const SizePage = async ({
         }
     });
 
-    const billboards = await prismadb.billboard.findMany({
-        where: {
-            storeId: params.storeId
-        }
-    })
+
 
     return (
         <div className="flex-col">
