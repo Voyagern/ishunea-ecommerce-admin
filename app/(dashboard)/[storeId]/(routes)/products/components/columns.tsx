@@ -5,15 +5,15 @@ import { CellAction } from "./cell-action"
 
 
 export type ProductColumn = {
-  id: string
-  name: string
-  price: string
-  size:string
-  category:string
-  color:string
-  isFutured:boolean
-  isArchived:boolean
-  createdAt: string
+  id: string;
+  name: string;
+  price: string;
+  size: string;
+  category: string;
+  color: string;
+  isFutured: boolean;
+  isArchived: boolean;
+  createdAt: string;
 }
 
 export const columns: ColumnDef<ProductColumn>[] = [
@@ -27,7 +27,7 @@ export const columns: ColumnDef<ProductColumn>[] = [
   },
   {
     accessorKey: "isFutured",
-    header: "Featured",
+    header: "Futured",
   },
   {
     accessorKey: "price",
@@ -44,11 +44,15 @@ export const columns: ColumnDef<ProductColumn>[] = [
   {
     accessorKey: "color",
     header: "Color",
-    cell:({row})=>(
-        <div className="flex items-center gap-x-2">
-          {row.original.color}
-          <div className="h-6 w-6 rounded-full border" style={{backgroundColor:row.original.color}}/>
-        </div>)
+    cell : ({ row }) => (
+      <div className="flex items-center gap-x-2">
+        {row.original.color}
+        <div 
+          className="h-6 w-6 rounded-full border"
+          style={{ backgroundColor: row.original.color}}
+        />
+      </div>
+    )
   },
   {
     accessorKey: "createdAt",
