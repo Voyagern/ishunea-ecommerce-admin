@@ -1,29 +1,30 @@
 "use client";
 
 import React from "react";
-import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "./dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./dialog";
 
-interface ModalProps{
+interface ModalProps {
     title: string;
     description: string;
-    isOpen:boolean;
-    onCLose:()=>void;
-    children?:React.ReactNode;
+    isOpen: boolean;
+    onClose: () => void; // Corrected the typo here
+    children?: React.ReactNode;
 }
-export const Modal:React.FC<ModalProps>=({
-    title,
-    description,
-    isOpen,
-    onCLose,
-    children
-}) =>{
-    const  onChange=(open:boolean) =>{
-        if(!open) {
-            onCLose();
+
+export const Modal: React.FC<ModalProps> = ({
+                                                title,
+                                                description,
+                                                isOpen,
+                                                onClose, // Corrected the typo here
+                                                children,
+                                            }) => {
+    const onChange = (open: boolean) => {
+        if (!open) {
+            onClose(); // Use corrected onClose here
         }
     };
 
-    return(
+    return (
         <Dialog open={isOpen} onOpenChange={onChange}>
             <DialogContent>
                 <DialogHeader>
@@ -37,6 +38,5 @@ export const Modal:React.FC<ModalProps>=({
                 </div>
             </DialogContent>
         </Dialog>
-    )
-
-}
+    );
+};

@@ -1,14 +1,13 @@
-import {create} from "zustand";
-import {set} from "yaml/dist/schema/yaml-1.1/set";
+import { create } from "zustand";
 
-interface useStoreModalStore{
-    isOpen:boolean;
-    onOpen:()=>void;
-    onClose:()=>void;
-};
-export const useStoreModal=create<useStoreModalStore>((set)=>({
-    isOpen:true,
-    onOpen:()=> set({isOpen:true}),
-    onClose:()=> set({isOpen:false}),
+interface UseStoreModalStore {
+    isOpen: boolean;
+    onOpen: () => void;
+    onClose: () => void;
+}
 
+export const useStoreModal = create<UseStoreModalStore>((set) => ({
+    isOpen: false, // Initialize to false so the modal is closed by default
+    onOpen: () => set({ isOpen: true }),
+    onClose: () => set({ isOpen: false }),
 }));
