@@ -85,7 +85,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             name: '',
             images: [],
             price: 0,
-            categoryId: '',
+            categoryid: '',
             colorId: '',
             sizeId: '',
             isFutured: false,
@@ -99,7 +99,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             if (initialData) {
                 await axios.patch(`/api/${params.storeId}/products/${params.productId}`, data);
             } else {
-                await axios.post(`/api/${params.storeid}/products`, data);
+                await axios.post(`/api/${params.storeId}/products`, data);
             }
             router.push(`/${params.storeId}/products`)
             router.refresh(); 
