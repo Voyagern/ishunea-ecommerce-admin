@@ -3,7 +3,9 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 interface OverviewProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data: any[];
+
 }
 
 export const Overview: React.FC<OverviewProps> = ({ data }) => {

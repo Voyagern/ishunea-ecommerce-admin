@@ -1,5 +1,4 @@
-import prismadb from "@/lib/prismadb";
-import { redirect } from "next/navigation";
+
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
